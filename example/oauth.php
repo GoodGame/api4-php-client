@@ -22,6 +22,7 @@ try {
     die(__FILE__);
 }
 $accessToken = $data->getToken();
+$refreshToken = $data->getRefreshToken();
 ?>
 <table>
     <tr>
@@ -30,10 +31,26 @@ $accessToken = $data->getToken();
     </tr>
     <tr>
         <td>Refresh Token</td>
-        <td><?= $data->getRefreshToken() ?></td>
+        <td><?= $refreshToken ?></td>
     </tr>
     <tr>
         <td>Example request</td>
         <td><?php print_r($provider->getUserInfo($accessToken)) ?></td>
     </tr>
+
+
+    <?php
+    $newAccessToken = $provider->getAccessToken('refresh_token', [
+        'refresh_token' => $refreshToken,
+    ]);
+    ?>
+    <tr>
+        <td>New Access Token</td>
+        <td><?= $newAccessToken->getToken() ?></td>
+    </tr>
+    <tr>
+        <td>New Refresh Token</td>
+        <td><?= $newAccessToken->getRefreshToken() ?></td>
+    </tr>
+
 </table>
