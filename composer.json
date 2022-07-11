@@ -1,0 +1,14 @@
+{
+  "name": "goodgame/api4-php-client",
+  "description": "api4-php-client",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.1",
+    "league/oauth2-client": "^2.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "GoodGame\\": "src/"
+    }
+  }
+}
