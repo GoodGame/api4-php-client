@@ -2,9 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use GoodGame\Oauth2\{
-    Factory,
-};
+use GoodGame\Oauth2\Factory;
 
 $provider = Factory::getTest(require 'config.php');
 $url = $provider->getAuthorizationUrl();
