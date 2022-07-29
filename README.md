@@ -51,7 +51,7 @@ Content-Type: application/x-www-form-urlencoded
 grant_type: authorization_code
 client_id: MyClient
 client_secret: OtQ:MRWc9...FNuhBHP
-redirect_uri: https://ggstats.strayge.com/
+redirect_uri: https://your-domain
 code: def50200a...71f9f9e21
 ```
 
