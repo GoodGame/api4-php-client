@@ -11,7 +11,7 @@ if (empty($_GET['code'])) {
     die('Что-то пошло не так1');
 }
 
-$provider = Factory::getTest(require 'config.php');
+$provider = Factory::getReal(require 'config.php');
 try {
     $data = $provider->getAccessToken('authorization_code', [
         'code' => $_GET['code'],
