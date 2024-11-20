@@ -3,6 +3,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 print_r($_GET);
+error_reporting(E_ALL);
 
 use GoodGame\Oauth2\Factory;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
@@ -28,6 +29,10 @@ $refreshToken = $data->getRefreshToken();
     <tr>
         <td>Access Token</td>
         <td><?= $accessToken ?></td>
+    </tr>
+    <tr>
+        <td>Access Token Expire</td>
+        <td><?= date('Y-m-d H:i:s', $data->getExpires() ?? 0) ?></td>
     </tr>
     <tr>
         <td>Refresh Token</td>
